@@ -1,354 +1,251 @@
-‎<!DOCTYPE html>
-‎<html lang="ht">
-‎<head>
-‎<meta charset="UTF-8">
-‎<meta name="viewport" content="width=device-width, initial-scale=1.0">
-‎<title>SIAVAC - Fòm Deklarasyon Temwen</title>
-‎
-‎<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-‎
-‎<style>
-‎*{
-‎margin:0;
-‎padding:0;
-‎box-sizing:border-box;
-‎font-family:Arial,sans-serif;
-‎}
-‎
-‎body{
-‎background:#ececec;
-‎padding:20px;
-‎}
-‎
-‎.container{
-‎max-width:900px;
-‎margin:auto;
-‎background:#fff;
-‎padding:25px;
-‎border-radius:10px;
-‎box-shadow:0 0 10px rgba(0,0,0,.2);
-‎}
-‎
-‎.header{
-‎text-align:center;
-‎margin-bottom:20px;
-‎}
-‎
-‎.header img{
-‎width:120px;
-‎height:120px;
-‎object-fit:contain;
-‎}
-‎
-‎.header h1{
-‎font-size:28px;
-‎color:#003366;
-‎margin-top:10px;
-‎}
-‎
-‎.header h2{
-‎font-size:18px;
-‎margin-top:5px;
-‎color:#444;
-‎}
-‎
-‎.section-title{
-‎background:#003366;
-‎color:#fff;
-‎padding:8px;
-‎margin-top:20px;
-‎margin-bottom:10px;
-‎font-size:18px;
-‎}
-‎
-‎.row{
-‎display:flex;
-‎gap:10px;
-‎margin-bottom:10px;
-‎}
-‎
-‎.col{
-‎flex:1;
-‎}
-‎
-‎label{
-‎font-weight:bold;
-‎display:block;
-‎margin-bottom:5px;
-‎}
-‎
-‎input,textarea{
-‎width:100%;
-‎padding:8px;
-‎border:1px solid #999;
-‎border-radius:5px;
-‎font-size:14px;
-‎}
-‎
-‎textarea{
-‎height:80px;
-‎resize:vertical;
-‎}
-‎
-‎.question{
-‎margin-bottom:15px;
-‎}
-‎
-‎button{
-‎margin-top:20px;
-‎background:#003366;
-‎color:white;
-‎padding:12px 25px;
-‎border:none;
-‎border-radius:6px;
-‎font-size:18px;
-‎cursor:pointer;
-‎}
-‎
-‎button:hover{
-‎background:#0050a5;
-‎}
-‎
-‎.signature{
-‎display:flex;
-‎justify-content:space-between;
-‎margin-top:50px;
-‎}
-‎
-‎.signature div{
-‎width:40%;
-‎text-align:center;
-‎}
-‎
-‎.line{
-‎border-top:1px solid #000;
-‎margin-top:60px;
-‎}
-‎
-‎@media print{
-‎button{
-‎display:none;
-‎}
-‎}
-‎</style>
-‎
-‎</head>
-‎
-‎<body>
-‎
-‎<div class="container" id="pdf">
-‎
-‎<div class="header">
-‎
-‎<img src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg">
-‎
-‎<h1>SIAVAC</h1>
-‎
-‎<h2>Service Intelligence AntiVol AntiCrime</h2>
-‎
-‎<h2>FÒM DEKLARASYON TEMWEN</h2>
-‎
-‎</div>
-‎
-‎<div class="section-title">
-‎ENFÒMASYON SOU DOSYE A
-‎</div>
-‎
-‎<div class="row">
-‎<div class="col">
-‎<label>Nimewo Dosye</label>
-‎<input type="text">
-‎</div>
-‎
-‎<div class="col">
-‎<label>Dat</label>
-‎<input type="date">
-‎</div>
-‎</div>
-‎
-‎<div class="row">
-‎<div class="col">
-‎<label>Kote Ensidan</label>
-‎<input type="text">
-‎</div>
-‎
-‎<div class="col">
-‎<label>Kalite Ankèt</label>
-‎<input type="text">
-‎</div>
-‎</div>
-‎
-‎<div class="section-title">
-‎ENFÒMASYON SOU TEMWEN
-‎</div>
-‎
-‎<div class="row">
-‎<div class="col">
-‎<label>Non Konplè</label>
-‎<input type="text">
-‎</div>
-‎
-‎<div class="col">
-‎<label>Telefòn</label>
-‎<input type="text">
-‎</div>
-‎</div>
-‎
-‎<div class="row">
-‎<div class="col">
-‎<label>Adrès</label>
-‎<input type="text">
-‎</div>
-‎
-‎<div class="col">
-‎<label>Okipasyon</label>
-‎<input type="text">
-‎</div>
-‎</div><div class="section-title">
-‎DEKLARASYON TEMWEN
-‎</div>
-‎
-‎<div class="question">
-‎<label>1. Ki sa ou te wè oswa tande?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>2. Kilè evènman an te rive? (Dat ak Lè)</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>3. Ki kote evènman an te rive?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>4. Poukisa ou te sou plas la?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>5. Kijan evènman an te kòmanse?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>6. Ki moun ki te prezan?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>7. Èske ou konnen idantite moun ki enplike yo? Si wi, bay detay.</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>8. Kisa chak moun te fè pandan evènman an?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>9. Èske ou tande nenpòt konvèsasyon? Ekri sa ou sonje.</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>10. Konbyen tan evènman an te dire?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>11. Èske te gen machin, zam oswa lòt objè ki te itilize?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>12. Èske gen lòt temwen? Bay non ak kontak si ou konnen yo.</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>13. Èske ou gen foto, videyo oswa odyo ki gen rapò ak evènman an?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>14. Èske ou deja bay deklarasyon sa a bay yon lòt otorite?</label>
-‎<textarea></textarea>
-‎</div>
-‎
-‎<div class="question">
-‎<label>15. Lòt enfòmasyon ou panse ki enpòtan pou ankèt la.</label>
-‎<textarea style="height:180px;"></textarea>
-‎</div>
-‎
-‎<div class="section-title">
-‎DEKLARASYON OFISYÈL
-‎</div>
-‎
-‎<p style="font-size:15px;line-height:28px;text-align:justify;">
-‎Mwen deklare tout enfòmasyon mwen bay nan dokiman sa a se verite selon sa mwen konnen ak sa mwen sonje. Mwen fè deklarasyon sa a san okenn fòs, menas oswa presyon.
-‎</p>
-‎
-‎<div class="signature">
-‎
-‎<div>
-‎<div class="line"></div>
-‎Temwen
-‎</div>
-‎
-‎<div>
-‎<div class="line"></div>
-‎Ajan Ankèt SIAVAC
-‎</div>
-‎
-‎</div><br><br>
-‎
-‎<div style="text-align:center;">
-‎<button onclick="downloadPDF()">
-‎📄 Telechaje Deklarasyon an an PDF
-‎</button>
-‎</div>
-‎
-‎</div>
-‎
-‎<script>
-‎
-‎function downloadPDF(){
-‎
-‎var element = document.getElementById("pdf");
-‎
-‎var opt = {
-‎
-‎margin:0.5,
-‎
-‎filename:'SIAVAC_Declaration_Temwen.pdf',
-‎
-‎image:{
-‎type:'jpeg',
-‎quality:1
-‎},
-‎
-‎html2canvas:{
-‎scale:2,
-‎useCORS:true
-‎},
-‎
-‎jsPDF:{
-‎unit:'in',
-‎format:'a4',
-‎orientation:'portrait'
-‎}
-‎
-‎};
-‎
-‎html2pdf().set(opt).from(element).save();
-‎
-‎}
-‎
-‎</script>
-‎
-‎</body>
-‎
-‎</html>
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIAVAC - Rapò Ankètè</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef0f2;
+padding:10px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:#fff;
+padding:18px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+/* HEADER */
+.header{
+text-align:center;
+margin-bottom:15px;
+}
+
+.header img{
+width:90px;
+height:90px;
+object-fit:contain;
+}
+
+.header h1{
+color:#003366;
+font-size:24px;
+}
+
+.header h2{
+font-size:14px;
+color:#444;
+}
+
+/* INFO BOX */
+.info-box{
+background:#f1f6ff;
+padding:10px;
+border-left:4px solid #003366;
+margin-bottom:15px;
+font-size:13px;
+}
+
+/* SECTION */
+.section-title{
+background:#003366;
+color:#fff;
+padding:8px;
+font-size:15px;
+margin-top:15px;
+border-radius:5px;
+}
+
+label{
+font-weight:bold;
+font-size:13px;
+margin-top:10px;
+display:block;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+border:1px solid #aaa;
+border-radius:6px;
+font-size:14px;
+}
+
+textarea{
+min-height:80px;
+resize:vertical;
+}
+
+/* BUTTON */
+button{
+width:100%;
+margin-top:20px;
+background:#003366;
+color:#fff;
+padding:12px;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0050a5;
+}
+
+.signature{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.signature div{
+width:100%;
+text-align:center;
+}
+
+.line{
+border-top:1px solid #000;
+margin-top:45px;
+}
+
+@media(min-width:768px){
+.signature div{width:40%}
+}
+
+@media print{
+button{display:none}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="pdf">
+
+<div class="header">
+<img src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg">
+<h1>SIAVAC</h1>
+<h2>Service Intelligence AntiVol AntiCrime</h2>
+<h2>RAPÒ ANKÈTÈ</h2>
+</div>
+
+<div class="info-box">
+Dokiman sa se rapò ofisyèl ankètè SIAVAC la ap ranpli apre analiz yon dosye.
+</div>
+
+<div class="section-title">ENFÒMASYON DOSYE</div>
+
+<label>Case ID</label>
+<input type="text">
+
+<label>Dat Rapò a</label>
+<input type="date">
+
+<label>Non Ankètè</label>
+<input type="text">
+
+<label>ID Ankètè</label>
+<input type="text">
+
+<div class="section-title">SOUS ENFÒMASYON</div>
+
+<label>Ki sous ou itilize?</label>
+<textarea placeholder="Viktim / Temwen / Kamera / Lòt ankètè / Dokiman"></textarea>
+
+<label>Rezime enfòmasyon ou kolekte</label>
+<textarea></textarea>
+
+<div class="section-title">OBSERVASYON ANKÈTÈ</div>
+
+<label>Analiz sou ka a</label>
+<textarea></textarea>
+
+<label>Enkonsistans oswa dout nan deklarasyon yo</label>
+<textarea></textarea>
+
+<label>Prèv ki verifye</label>
+<textarea></textarea>
+
+<div class="section-title">KONKLIZYON ANKÈTÈ</div>
+
+<label>Konklizyon jeneral</label>
+<textarea></textarea>
+
+<label>Risk (Ba / Mwayen / Wo)</label>
+<input type="text">
+
+<label>Rekòmandasyon</label>
+<textarea></textarea>
+
+<div class="section-title">DEKLARASYON OFISYÈL</div>
+
+<p style="font-size:13px;line-height:22px;">
+Mwen deklare tout analiz sa yo fèt ak pwofesyonalis, san patipri, selon enfòmasyon mwen kolekte.
+</p>
+
+<div class="signature">
+
+<div>
+<div class="line"></div>
+Siyati Ankètè
+</div>
+
+<div>
+<div class="line"></div>
+SIAVAC
+</div>
+
+</div>
+
+<button onclick="downloadPDF()">📄 Telechaje Rapò</button>
+
+</div>
+
+<script>
+function downloadPDF(){
+
+const element = document.getElementById("pdf");
+
+html2pdf().set({
+margin:0.4,
+filename:'SIAVAC_Rapport_Enqueteur.pdf',
+image:{type:'jpeg',quality:1},
+html2canvas:{
+scale:2,
+useCORS:true,
+scrollY:0,
+windowWidth:element.scrollWidth
+},
+jsPDF:{
+unit:'mm',
+format:'a4',
+orientation:'portrait'
+},
+pagebreak:{
+mode:['css','legacy','avoid-all']
+}
+}).from(element).save();
+}
+</script>
+
+</body>
+</html>
